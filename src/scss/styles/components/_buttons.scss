@@ -1,0 +1,13 @@
+@use"../tokens/" as t;
+.btn{
+    background-color: t.tokens(btn,btnDefault);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: t.tokens(radi, pill);
+    box-shadow: 0 4px 0 t.tokens(btn, btnDefaultShadow);
+    align-self: start;
+    padding: t.convertPXToRem(t.tokens(spacings, sm));
+    color: t.tokens(btn, btnTextColor);
+    gap:t.convertPXToRem(t.tokens(spacings, sm));
+} 

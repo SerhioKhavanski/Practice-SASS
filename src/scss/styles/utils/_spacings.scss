@@ -1,0 +1,63 @@
+@use"../tokens" as t;
+
+@mixin spacings ($type){
+    @if $type == p{
+        @each $name, $val in t.$spacings{
+            .#{$type}-#{$name}{
+                padding: t.convertPXToRem($val);
+            }
+        }
+    }
+    @else if $type == py{
+        @each $name, $val in t.$spacings{
+            .#{$type}-#{$name}{
+                padding-block: t.convertPXToRem($val);
+            }
+        }
+    }
+
+    @else if $type == px{
+        @each $name, $val in t.$spacings{
+            .#{$type}-#{$name}{
+                padding-inline: t.convertPXToRem($val);
+            }
+        }
+    }
+    @else if $type == m{
+        @each $name, $val in t.$spacings{
+            .#{$type}-#{$name}{
+                margin: t.convertPXToRem($val);
+            }
+        }
+    }
+    @else if $type == mx{
+        @each $name, $val in t.$spacings{
+            .#{$type}-#{$name}{
+                margin-inline: t.convertPXToRem($val);
+            }
+        }
+    }
+    @else if $type == my{
+        @each $name, $val in t.$spacings{
+            .#{$type}-#{$name}{
+                margin-block: t.convertPXToRem($val);
+            }
+        }
+    }
+    @else if $type == g{
+        @each $name, $val in t.$spacings{
+            .#{$type}-#{$name}{
+                gap: t.convertPXToRem($val);
+            }
+        }
+    }
+
+}
+
+@include spacings(p);
+@include spacings(py);
+@include spacings(px);
+@include spacings(m);
+@include spacings(mx);
+@include spacings(my);
+@include spacings(g);

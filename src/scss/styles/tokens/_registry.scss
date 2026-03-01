@@ -1,0 +1,10 @@
+@use"./radii" as r;
+@use"./spacings" as s;
+@use"./theme" as t;
+
+$TOKENS:(
+    btn:t.$btn,
+    bgGardient:t.$bgGardient,
+    radi: r.$radi,
+    spacings: s.$spacings
+);

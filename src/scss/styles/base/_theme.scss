@@ -1,0 +1,30 @@
+@use"sass:map";
+@use"../tokens" as t;
+
+@mixin convertVarsToCSS ($mode){
+    @if map.has-key(t.$theme, $mode){
+        $currentMode: map.get(t.$theme, $mode);
+        @each $name, $val in $currentMode{
+            --#{$name}:#{$val};
+        }
+    }
+    @else{
+        @error"convertVarsToCSS: такой темы #{$mode} нет. Выбирете из списка #{map.keys(t.$theme)}";
+    }
+
+}
+:root{
+    @include convertVarsToCSS(dark);
+}
+@media(prefers-color-scheme: light){
+    :root{
+         @include convertVarsToCSS(light);
+    }
+}
+body{
+    background: 
+    radial-gradient(circle at 10% 20%, t.tokens(bgGardient,bgGardientGreen), transparent 30%),
+    radial-gradient(circle at 100% 50%, t.tokens(bgGardient,bgGardientblue), transparent 30%),
+    radial-gradient(circle at 40% 100%, t.tokens(bgGardient,bgGardientPurple), transparent 30%),
+    var(--themeBg);
+}

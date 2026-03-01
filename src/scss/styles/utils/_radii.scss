@@ -1,0 +1,11 @@
+@use"../tokens" as t;
+
+@mixin radius (){
+    @each $name, $val in t.$radi{
+        .br-#{$name}{
+            border-radius: #{$val};
+        }
+    }
+}
+
+@include radius();

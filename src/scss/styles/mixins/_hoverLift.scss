@@ -1,0 +1,8 @@
+@mixin hoverLift($up:-4px, $scale:1, $shadowColor: transparent){
+    &:hover{
+        transform: 
+            translate(0, $up)
+            scale($scale);
+        box-shadow: 0 0 15px rgba($shadowColor, 0.5);
+    }
+} 

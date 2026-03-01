@@ -1,0 +1,64 @@
+@use"../tokens/" as t;
+@use"../mixins/" as m;
+
+.services{
+    &__card{
+        overflow: hidden;
+        border-radius: t.tokens(radi, lg);
+        background: var(--themeCardBG);
+        display: flex;
+        flex-direction: column;
+        gap: t.convertPXToRem(t.tokens(spacings, md));
+        flex-grow: 1;
+        transition: transform 400ms ease;
+    }
+    &__text{
+        padding: t.tokens(spacings, md);
+        display: flex;
+        flex-direction: column;
+        gap: t.convertPXToRem(t.tokens(spacings, md));
+        flex-grow: 1;
+    }
+    &__btn{
+        margin-top: auto;
+        margin-bottom:t.convertPXToRem(t.tokens(spacings, xs));
+        svg{
+            width: 20px;
+            height: 20px;
+
+        }
+    }
+}
+@keyframes puls{
+    0%{
+        transform: 
+            scale(1);
+    }
+    100%{
+        transform: 
+            scale(1.1);
+    }
+}
+@media(hover: hover) and (pointer: fine){
+
+    .services{
+        &__card{
+            @include m.hoverLift(-2px, 1.02, transparent);
+        }
+        &__btn{
+            transition: transform 400ms ease;
+            @include m.hoverLift(-5px, 1.05, t.tokens(btn, btnDefault));
+        }
+        &__btn:hover>svg{
+            color: red;
+            transition: color 200ms ease;
+            animation: puls 400ms infinite ease alternate;
+        }
+    }
+}
+
+.services{
+    &__btn:active{
+        @include m.press();
+    }
+}

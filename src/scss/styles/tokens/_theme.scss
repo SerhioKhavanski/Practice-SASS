@@ -1,0 +1,37 @@
+
+$theme:(
+    dark:(
+        themeBg:rgb(26, 26, 26),
+        themeContainerBG:rgba(19, 19, 19, 0.361),
+        themeCardBG:rgb(25, 25, 25),
+        themeBorder:rgb(61, 61, 61),
+        themeMainText:rgb(218, 217, 217),
+        themeHeadText:white,
+        themeShadow:rgba(255, 255, 255, 0.411)
+    ),
+    light:(
+        themeBg:rgb(255, 255, 255),
+        themeContainerBG:rgba(202, 239, 255, 0.361),
+        themeCardBG:rgb(255, 255, 255),
+        themeBorder:rgb(39, 39, 39),
+        themeMainText:rgb(49, 49, 49),
+        themeHeadText:rgb(0, 0, 0),
+        themeShadow:rgba(94, 94, 94, 0.411)
+    )
+);
+$btn:(
+    btnDefault: rgb(65, 90, 170),
+    btnSecondary: rgb(152, 152, 230),
+    btnPrimary:rgb(149, 61, 231),
+    btnSuccess:rgb(98, 226, 98),
+    btnDefaultShadow: rgb(48, 67, 128),
+    btnSecondaryShadow: rgb(112, 112, 169),
+    btnPrimaryShadow:rgb(89, 36, 140),
+    btnSuccessShadow:rgb(64, 141, 64),
+    btnTextColor:white,
+);
+$bgGardient:(
+    bgGardientGreen:rgba(90, 231, 90, 0.199),
+    bgGardientblue:rgba(90, 92, 231, 0.199),
+    bgGardientPurple:rgba(215, 90, 231, 0.199)
+);

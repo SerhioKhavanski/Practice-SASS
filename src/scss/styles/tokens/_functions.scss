@@ -1,0 +1,21 @@
+@use"sass:map";
+@use"sass:math";
+@use"../tokens/registry" as r;
+
+@function tokens($map, $key){
+    @if map.has-key(r.$TOKENS,$map){
+        $currentMap: map.get(r.$TOKENS, $map);
+        @if map.has-key($currentMap, $key){
+            @return map.get($currentMap, $key);
+        }
+        @error "tokens(#{$map}...): такого ключа нет. Выберете из списка: #{map.keys($currentMap)}";
+    }
+    @error "tokens(): такой карты #{$map} нет. Выберете из списка: #{map.keys(r.$TOKENS)}";
+}
+
+@function convertPXToRem($px, $base:16px){
+    @if math.unit($px) == 'px'{
+        @return math.div($px, $base) * 1rem;
+    }
+    @error "convertPXToRem(): вы ввели #{$px} не px, функция принимает только пиксели";
+}   
